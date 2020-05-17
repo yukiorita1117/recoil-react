@@ -18,7 +18,7 @@ const replaceTasksAtIndex = (tasks: Task[], index: number, newTask: Task) => {
 const TaskItem: FC<TaskItemProps> = ({ task, index }) => {
   const [tasks, setTasks] = useRecoilState(taskState);
 
-  const onChange = () => {
+  const handleChange = () => {
     const newTasks = replaceTasksAtIndex(tasks, index, {
       ...task,
       completed: !task.completed,
@@ -26,16 +26,16 @@ const TaskItem: FC<TaskItemProps> = ({ task, index }) => {
     setTasks(newTasks);
   };
 
-  const onClick = () => {
+  const handleClick = () => {
     const newTasks = removeTasksAtIndex(tasks, index);
     setTasks(newTasks);
   };
 
   return (
     <li key={index}>
-      <input type="checkbox" checked={task.completed} onChange={onChange} />
+      <input type="checkbox" checked={task.completed} onChange={handleChange} />
       {task.title}
-      <button onClick={onClick}>削除</button>
+      <button onClick={handleClick}>削除</button>
     </li>
   );
 };

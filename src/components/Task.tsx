@@ -9,7 +9,7 @@ const TaskInput = () => {
   // useStateと同じように使えるが、globalなstateの書き換えになる。
   // stateに書き込まない場合はuseRecoilValueが推奨されている。
   const setTasks = useSetRecoilState(taskState);
-  console.log("atom/Task のlog", taskState);
+  console.log("atom/Taskのlog", taskState);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
