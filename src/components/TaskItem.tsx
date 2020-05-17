@@ -12,6 +12,7 @@ const removeTasksAtIndex = (tasks: Task[], index: number) => {
 };
 
 const replaceTasksAtIndex = (tasks: Task[], index: number, newTask: Task) => {
+  // 補足 : sliceはendは除外するのでindexのものは除外される。
   return [...tasks.slice(0, index), newTask, ...tasks.slice(index + 1)];
 };
 
