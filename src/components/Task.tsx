@@ -23,7 +23,7 @@ const TaskInput = () => {
   return (
     <div>
       <label>
-        TODOタスク
+        {"TODOタスク"}
         <input type="text" value={title} onChange={onChange} />
       </label>
       <button onClick={handleClick}>登録</button>
